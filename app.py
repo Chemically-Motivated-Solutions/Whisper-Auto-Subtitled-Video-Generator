@@ -36,7 +36,6 @@ with col2:
     ###### I recommend starting with the base model and then experimenting with the larger models, the small and medium models often work well. """)
     
 
-@st.cache(allow_output_mutation=True)
 def populate_metadata(link):
     yt = YouTube(link)
     author = yt.author
@@ -48,7 +47,6 @@ def populate_metadata(link):
     return author, title, description, thumbnail, length, views
 
 
-@st.cache(allow_output_mutation=True)
 def download_video(link):
     yt = YouTube(link)
     video = yt.streams.filter(progressive=True, file_extension='mp4').order_by('resolution').desc().first().download()
@@ -72,7 +70,6 @@ def change_model(current_size, size):
         raise Exception("Model size is the same as the current size.")
 
 
-@st.cache(allow_output_mutation=True)
 def inference(link, loaded_model, task):
     yt = YouTube(link)
     path = yt.streams.filter(only_audio=True)[0].download(filename="audio.mp4")
@@ -94,7 +91,6 @@ def inference(link, loaded_model, task):
         raise ValueError("Task not supported")
 
 
-@st.cache(allow_output_mutation=True)
 def getSubs(segments: Iterator[dict], format: str, maxLineWidth: int) -> str:
     segmentStream = StringIO()
 
