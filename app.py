@@ -63,6 +63,7 @@ loaded_model = whisper.load_model("base")
 current_size = "None"
 
 
+@st.cache(allow_output_mutation=True)
 def change_model(current_size, size):
     if current_size != size:
         loaded_model = whisper.load_model(size)
