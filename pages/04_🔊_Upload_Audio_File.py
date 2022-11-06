@@ -9,6 +9,8 @@ from io import StringIO
 import numpy as np
 import pathlib
 import os
+import components.authenticate as authenticate
+import torch
 
 st.set_page_config(page_title="Auto Transcriber", page_icon="🔊", layout="wide")
 
@@ -32,7 +34,7 @@ save_dir.mkdir(exist_ok=True)
 col1, col2 = st.columns([1, 3])
 with col1:
     lottie = load_lottieurl("https://assets1.lottiefiles.com/packages/lf20_1xbk4d2v.json")
-    st_lottie(lottie, speed=1, height=250, width=250)
+    st_lottie(lottie)
 
 with col2:
     st.write("""
@@ -48,8 +50,10 @@ current_size = "None"
 
 @st.cache(allow_output_mutation=True)
 def change_model(current_size, size):
+    torch.cuda.is_available()
+    DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
     if current_size != size:
-        loaded_model = whisper.load_model(size)
+        loaded_model = whisper.load_model(size, device=DEVICE)
         return loaded_model
     else:
         raise Exception("Model size is the same as the current size.")
@@ -98,7 +102,7 @@ def main():
     loaded_model = change_model(current_size, size)
     st.write(f"Model is {'multilingual' if loaded_model.is_multilingual else 'English-only'} "
         f"and has {sum(np.prod(p.shape) for p in loaded_model.parameters()):,} parameters.")
-    input_file = st.file_uploader("Upload an audio file", type=["mp3", "wav", "m4a"])
+    input_file = st.file_uploader("Upload Audio File", type=["mp3", "wav", "m4a"])
     if input_file is not None:
         filename = input_file.name[:-4]
     else:
@@ -201,5 +205,10 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
-    st.markdown("###### Made with :heart: by [@BatuhanYılmaz](https://twitter.com/batuhan3326) [![this is an image link](https://i.imgur.com/thJhzOO.png)](https://www.buymeacoffee.com/batuhanylmz)")
+    authenticate.set_st_state_vars()
+    if st.session_state["authenticated"]:
+        main()
+        authenticate.button_logout()
+    else:
+        st.info("Please log in or sign up to use the app.")
+        authenticate.button_login()
