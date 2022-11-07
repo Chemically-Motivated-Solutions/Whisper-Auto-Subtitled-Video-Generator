@@ -8,7 +8,6 @@ from io import StringIO
 import numpy as np
 import pathlib
 import os
-import components.authenticate as authenticate
 
 
 st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
@@ -127,11 +126,5 @@ def main():
 
 
 if __name__ == "__main__":
-    authenticate.set_st_state_vars()
-    if st.session_state["authenticated"]:
-        main()
-        authenticate.button_logout()
-    else:
-        st.info("Please log in or sign up to use the app.")
-        authenticate.button_login()
+    main()
         
