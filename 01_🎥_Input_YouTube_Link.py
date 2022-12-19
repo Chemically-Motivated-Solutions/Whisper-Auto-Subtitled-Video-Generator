@@ -15,7 +15,7 @@ from languages import LANGUAGES
 st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
 
 # Define a function that we can use to load lottie files from a link.
-@st.cache(allow_output_mutation=True)
+@st.cache()
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
