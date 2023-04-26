@@ -218,7 +218,7 @@ def main():
                 st.video(video_with_subs)
                 st.snow()
             with col8:
-                st.download_button(label="Download Video with Subtitles",
+                st.download_button(label="Download Video with Subtitles ",
                                 data=video_with_subs,
                                 file_name=f"{filename}_with_subs.mp4")
     else:
