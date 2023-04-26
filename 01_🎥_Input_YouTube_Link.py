@@ -246,7 +246,7 @@ def main():
                 st.video(video_with_subs)
                 st.balloons()
             with col8:
-                st.download_button(label="Download Subtitled Video",
+                st.download_button(label="Download Subtitled Video ",
                                     data=video_with_subs,
                                     file_name=f"{title} with subtitles.mp4")
     else:
