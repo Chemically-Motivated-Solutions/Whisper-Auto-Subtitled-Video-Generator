@@ -122,7 +122,7 @@ def main():
         else:
             st.error("Please upload a .srt or .vtt file")
     else:
-        st.info("Please upload a video file and a transcript file")
+        st.info("Please upload a video file and a transcript file ")
 
 
 if __name__ == "__main__":
