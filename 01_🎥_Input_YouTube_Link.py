@@ -241,7 +241,7 @@ def main():
                 st.info("Streamlit refreshes after the download button is clicked. The data is cached so you can download the transcript again without having to transcribe the video again.")
             
             with col4:
-                with st.spinner("Generating Subtitled Video"):
+                with st.spinner("Generating Subtitled Video "):
                     video_with_subs = generate_subtitled_video(video, "audio.mp3", "transcript.srt")
                 st.video(video_with_subs)
                 st.balloons()
