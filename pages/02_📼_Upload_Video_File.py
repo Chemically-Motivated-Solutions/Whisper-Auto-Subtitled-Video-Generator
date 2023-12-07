@@ -227,4 +227,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-    st.markdown("###### Made with :heart: by [@BatuhanYılmaz](https://twitter.com/batuhan3326) [![this is an image link](https://i.imgur.com/thJhzOO.png)](https://www.buymeacoffee.com/batuhanylmz)")
+    st.markdown("###### Made with :heart: by [@BatuhanYılmaz](https://github.com/BatuhanYilmaz26) [![this is an image link](https://i.imgur.com/thJhzOO.png)](https://www.buymeacoffee.com/batuhanylmz)")
