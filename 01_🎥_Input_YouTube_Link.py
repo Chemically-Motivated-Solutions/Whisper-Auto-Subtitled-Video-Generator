@@ -12,7 +12,7 @@ from utils import write_vtt, write_srt
 import ffmpeg
 from languages import LANGUAGES
 
-st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
+st.set_page_config(page_title="Auto Subtitled Video Generator ", page_icon=":movie_camera:", layout="wide")
 
 # Define a function that we can use to load lottie files from a link.
 @st.cache()
