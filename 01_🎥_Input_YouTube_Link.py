@@ -126,7 +126,7 @@ def generate_subtitled_video(video, audio, transcript):
     
 
 def main():
-    size = st.selectbox("Select Model Size (The larger the model, the more accurate the transcription will be, but it will take longer)", ["tiny", "base", "small", "medium", "large"], index=1)
+    size = st.selectbox("Select Model Size (The larger the model, the more accurate the transcription will be, but it will take longer)", ["tiny", "base", "small", "medium", "large-v3"], index=1)
     loaded_model = change_model(current_size, size)
     st.write(f"Model is {'multilingual' if loaded_model.is_multilingual else 'English-only'} "
         f"and has {sum(np.prod(p.shape) for p in loaded_model.parameters()):,} parameters.")
