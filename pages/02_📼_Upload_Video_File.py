@@ -13,7 +13,6 @@ import os
 st.set_page_config(page_title="Auto Subtitled Video Generator", page_icon=":movie_camera:", layout="wide")
 
 # Define a function that we can use to load lottie files from a link.
-@st.cache(allow_output_mutation=True)
 def load_lottieurl(url: str):
     r = requests.get(url)
     if r.status_code != 200:
@@ -47,7 +46,6 @@ with col2:
     ###### I recommend starting with the base model and then experimenting with the larger models, the small and medium models often work well. """)
 
 
-@st.cache(allow_output_mutation=True)
 def change_model(current_size, size):
     if current_size != size:
         loaded_model = whisper.load_model(size)
@@ -56,7 +54,6 @@ def change_model(current_size, size):
         raise Exception("Model size is the same as the current size.")
 
 
-@st.cache(allow_output_mutation=True)
 def inferecence(loaded_model, uploaded_file, task):
     with open(f"{save_dir}/input.mp4", "wb") as f:
             f.write(uploaded_file.read())
