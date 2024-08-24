@@ -1,3 +1,4 @@
+git+https://github.com/openai/whisper.git
 ffmpeg==1.4
 ffmpeg_python==0.2.0
 numpy==1.23.3
@@ -7,5 +8,5 @@ streamlit
 streamlit_lottie==0.0.3
 torch==2.4.0
 transformers==4.44.0
-whisper==1.0
+whisper
 altair<5
