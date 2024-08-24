@@ -60,7 +60,7 @@ with col2:
 
 
 def download_video(link):
-    yt = YouTube(link, use_oauth=True, on_progress_callback=on_progress)
+    yt = YouTube(link, on_progress_callback=on_progress)
     ys = yt.streams.get_highest_resolution()
     video = ys.download(filename=f"{save_dir}/youtube_video.mp4")
     return video
@@ -79,7 +79,7 @@ def change_model(current_size, size):
 
 
 def inference(link, loaded_model, task):
-    yt = YouTube(link, use_oauth=True, on_progress_callback=on_progress)
+    yt = YouTube(link, on_progress_callback=on_progress)
     ys = yt.streams.get_audio_only()
     path = ys.download(filename=f"{save_dir}/audio.mp3", mp3=True)
     if task == "Transcribe":
