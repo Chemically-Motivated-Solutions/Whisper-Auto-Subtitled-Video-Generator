@@ -4,7 +4,7 @@ emoji: 🎥
 colorFrom: blue
 colorTo: purple
 sdk: streamlit
-sdk_version: 1.10.0
+sdk_version: 1.41.1
 app_file: 01_🎥_Input_YouTube_Link.py
 pinned: false
 ---
