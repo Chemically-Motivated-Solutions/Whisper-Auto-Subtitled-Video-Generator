@@ -11,8 +11,14 @@ pinned: false
 
 # Whisper-Auto-Subtitled-Video-Generator 🎥
 
-![GitHub](https://img.shields.io/github/license/your-username/Whisper-Auto-Subtitled-Video-Generator)
+![GitHub](https://img.shields.io/github/license/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
 ![Hugging Face](https://img.shields.io/badge/Hugging%20Face-FFD21E?logo=huggingface&logoColor=000)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator/pylint.yml?branch=main)
+![GitHub issues](https://img.shields.io/github/issues/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
+![GitHub forks](https://img.shields.io/github/forks/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
+![GitHub stars](https://img.shields.io/github/stars/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
+![GitHub contributors](https://img.shields.io/github/contributors/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
+![GitHub last commit](https://img.shields.io/github/last-commit/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator)
 
 ## Overview
 
@@ -29,7 +35,7 @@ Whisper-Auto-Subtitled-Video-Generator is a Streamlit application that enables u
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/canstralian/Whisper-Auto-Subtitled-Video-Generator.git
+   git clone https://github.com/Chemically-Motivated-Solutions/Whisper-Auto-Subtitled-Video-Generator.git
    ```
 
 2. Navigate to the project directory:
@@ -61,5 +67,3 @@ Contributions are welcome! Please fork the repository, make your changes, and su
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
-
